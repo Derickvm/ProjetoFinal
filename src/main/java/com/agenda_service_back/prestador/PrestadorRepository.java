@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface PrestadorRepository extends JpaRepository<Prestador,Long> {
     //cria uma interface para ser implementada
-//    @Query("SELECT p FROM Prestador p WHERE p.servico.id = :servicoId")
-//    List<Prestadores> findByServicoId(@Param("servicoId") Long servicoId);
+ @Query("SELECT p FROM Prestador p WHERE p.prestador_id = :prestador_id")
+  List<Prestador> findByPrestador_id(@Param("prestador_id") Long prestador_id);
 
 
 }

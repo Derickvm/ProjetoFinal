@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController //habilita o REST
-@RequestMapping("/usuario") //localhost:8080/usuarios
+@RequestMapping("/usuario") //localhost:8080/usuario
 public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;

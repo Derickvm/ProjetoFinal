@@ -15,11 +15,12 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "usuario", "prestador"})
 @Entity
 @Table(name = "endereco")
 public class Endereco implements Serializable {
     private static final Long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "endereco_id")
@@ -46,12 +47,23 @@ public class Endereco implements Serializable {
     @Column(name = "endereco_bairro")
     private String endereco_bairro;
 
-    @OneToMany(mappedBy = "usuario_id", fetch = FetchType.EAGER)
-    private List<Usuario> usuario = new ArrayList<>();
+    @OneToMany(mappedBy = "endereco", fetch = FetchType.EAGER)
+    private List<Usuario> usuarios = new ArrayList<>();
 
-    @OneToMany(mappedBy = "prestador_id", fetch = FetchType.EAGER)
-    private List<Prestador> prestador = new ArrayList<>();
+    @OneToMany(mappedBy = "endereco", fetch = FetchType.EAGER)
+    private List<Prestador> prestadores = new ArrayList<>();
 
-
-
+    @Override
+    public String toString() {
+        return "Endereco{" +
+                "endereco_id=" + endereco_id +
+                ", endereco_rua='" + endereco_rua + '\'' +
+                ", endereco_cep='" + endereco_cep + '\'' +
+                ", endereco_numero=" + endereco_numero +
+                ", endereco_complemento='" + endereco_complemento + '\'' +
+                ", endereco_cidade='" + endereco_cidade + '\'' +
+                ", endereco_estado='" + endereco_estado + '\'' +
+                ", endereco_bairro='" + endereco_bairro + '\'' +
+                '}';
+    }
 }

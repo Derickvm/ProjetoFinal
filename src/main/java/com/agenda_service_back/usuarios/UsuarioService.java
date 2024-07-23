@@ -4,8 +4,6 @@ import com.agenda_service_back.endereco.EnderecoService;
 import com.agenda_service_back.usuarios.*;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import com.agenda_service_back.usuarios.UsuarioMapper;
 
@@ -61,16 +59,6 @@ public class UsuarioService {
     public void deleteById(Long usuario_id){
         usuarioRepository.deleteById(usuario_id);
     }
-//    private Long getCurrentUserId() {
-//    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//    if (authentication == null || authentication.getPrincipal() == null) {
-//        throw new RuntimeException("Usuário não autenticado");
-//    }
-//
-//    String email = (String) authentication.getPrincipal();
-//    Usuario usuario = usuarioRepository.findByUsuario_email(email);
-//    return usuario.getUsuario_id();
-//}
 
 }
 

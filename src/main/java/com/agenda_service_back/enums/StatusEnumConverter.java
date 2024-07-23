@@ -22,4 +22,3 @@ public class StatusEnumConverter implements AttributeConverter<StatusEnum, Integ
         return StatusEnum.toEnum(codigo);
     }
 }
-

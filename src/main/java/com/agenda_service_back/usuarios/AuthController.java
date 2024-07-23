@@ -20,8 +20,6 @@ public class AuthController {
 
         String usuario_email = credentials.get("usuario_email");
         String usuario_senha = credentials.get("usuario_senha");
-        System.out.println("Email recebido: " + usuario_email);
-    System.out.println("Senha recebida: " + usuario_senha);
 
         String token = authService.authenticate(usuario_email, usuario_senha);
         Map<String, String> response = new HashMap<>();

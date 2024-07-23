@@ -29,10 +29,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-security</artifactId>
-    </dependency>
+
         <dependency>
         <groupId>io.jsonwebtoken</groupId>
         <artifactId>jjwt-api</artifactId>
@@ -81,12 +78,6 @@
             <artifactId>mapstruct</artifactId>
             <version>1.4.1.Final</version>
         </dependency>
-        <dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-core</artifactId>
-</dependency>
-
-    
       <dependency>
         <groupId>io.github.pasteleiros</groupId>
         <artifactId>lib</artifactId>
@@ -112,4 +103,5 @@
     </build>
 
 </project>
+
 
