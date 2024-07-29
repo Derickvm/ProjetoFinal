@@ -37,25 +37,25 @@ public class AgendamentoController {
     @PostMapping
     public ResponseEntity<AgendamentoDTO> createAgendamento(@RequestBody AgendamentoDTO agendamentoDTO, HttpServletRequest request) {
         try {
-            // Obtenha o token do cabeçalho Authorization
+            // Obter o token do cabeçalho Authorization
             String token = request.getHeader("Authorization").substring(7);
             System.out.println("Token recebido: " + token);
 
-            // Extraia o ID do usuário do token
+            // Extrair o ID do usuário do token
             String userIdStr = jwtUtil.extractUserId(token);
             System.out.println("ID do usuário extraído: " + userIdStr);
 
-            // Converta a string para Long
+            // Converter a string para Long
             Long usuario_id = Long.valueOf(userIdStr);
 
-            // Crie um novo objeto Usuario e atribua o ID
+            // Cria um novo objeto Usuario e atribua o ID
             Usuario usuario = new Usuario();
             usuario.setUsuario_id(usuario_id);
 
-            // Atribua o objeto Usuario ao DTO
+            // Atribui o objeto Usuario ao DTO
             agendamentoDTO.setUsuario(usuario);
 
-            // Crie o agendamento
+            // Cria o agendamento
             AgendamentoDTO createAgendamentoDTO = agendamentoService.create(agendamentoDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(createAgendamentoDTO);
         } catch (Exception e) {

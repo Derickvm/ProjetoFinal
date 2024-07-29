@@ -4,7 +4,6 @@ import com.agenda_service_back.enums.StatusEnum;
 import com.agenda_service_back.servico.Servico;
 import com.agenda_service_back.usuarios.Usuario;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.JoinColumn;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;

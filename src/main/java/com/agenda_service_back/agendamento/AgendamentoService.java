@@ -1,7 +1,6 @@
 package com.agenda_service_back.agendamento;
 
 
-import com.agenda_service_back.categoria.CategoriaMapper;
 import com.agenda_service_back.enums.StatusEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
